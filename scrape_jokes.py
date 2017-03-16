@@ -13,5 +13,8 @@ for each in tqdm(urlList):
     soup = BeautifulSoup(r, "html.parser")  # Beautiful soup object
     pList = soup.findAll('p', attrs={'class': 'action-paragraph paragraph'})
     for joke in pList:
-        jokeText = joke.find('span').text
-        print(jokeText)
+        if joke.find('span'):
+            jokeText = joke.find('span').text
+            print(jokeText.strip('\t\n'))
+        else:
+            print(joke.text)
