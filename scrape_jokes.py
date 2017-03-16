@@ -11,4 +11,4 @@ for each in tqdm(urlList):
     url = "http://www.yomamajokesgalore.com/" + each + ".html"
     r = urllib3.PoolManager().request('GET', url).data
     soup = BeautifulSoup(r, "html.parser")  # Beautiful soup object
-    print(soup)
+
