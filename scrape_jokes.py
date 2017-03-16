@@ -15,6 +15,6 @@ for each in tqdm(urlList):
     for joke in pList:
         if joke.find('span'):
             jokeText = joke.find('span').text
-            print(jokeText.strip('\t\n'))
+            print(jokeText.strip('\t\n '))
         else:
-            print(joke.text)
+            print(joke.text.strip('\t\n '))
